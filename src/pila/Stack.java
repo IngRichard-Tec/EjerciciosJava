@@ -70,7 +70,7 @@ public class Stack<T> {
     *  @return el valor del tope
     *  @throws Exception 
     */ 
-    public T  peek() throws Exception{
+    public T peek() throws Exception{
         T  result = null;
         
         //si está vacía la pila regresa una excepción
