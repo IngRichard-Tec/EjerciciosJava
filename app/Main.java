@@ -13,9 +13,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // System.out.print("Escribe la expresion infija:");
-        // String infija = sc.nextLine(); // "7 - (2*3) + 3";
-        String infija = "7 - (2*3) + 3";
+        System.out.print("Escribe la expresion infija:");
+        String infija = sc.nextLine(); // "7 - (2*3) + 3";
+        //String infija = "7 - (2*3) + 3";
 
         try {
             String postfija = InfijaAPostfija.convertir(infija);
@@ -29,7 +29,7 @@ public class Main {
 
     public static void EjemploStack()
     {
-        Stack <Integer> myStack = new Stack();
+        Stack<Integer> myStack = new Stack<Integer>();
         int size =0 ; // tamaño elegido por el usuario
         int currentData=0; // dato  de un nodo en cuestión
 

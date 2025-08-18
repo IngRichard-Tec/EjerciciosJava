@@ -1,4 +1,6 @@
-package src.pila;
+package src.app;
+
+import java.util.Stack;
 
 public class InfijaAPostfija {
     private static final String OPERADORES = "^*/+-()";

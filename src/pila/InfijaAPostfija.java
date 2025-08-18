@@ -5,7 +5,8 @@ public class InfijaAPostfija {
 
     public static String convertir(String expresion) throws Exception {
         StringBuilder npostfija = new StringBuilder();
-        Stack<Character> pila = new Stack<>();
+        Stack<Character> pila = new Stack<Character>();
+
         int len = expresion.length();
         for (int i = 0; i < len; ) {
             char c = expresion.charAt(i);
@@ -13,7 +14,8 @@ public class InfijaAPostfija {
                 i++;
                 continue;
             }
-            // Leer número flotante completo
+
+            // Leer número entero o flotante completo
             if (Character.isDigit(c) || c == '.') {
                 StringBuilder num = new StringBuilder();
                 while (i < len && (Character.isDigit(expresion.charAt(i)) || expresion.charAt(i) == '.')) {
@@ -23,6 +25,7 @@ public class InfijaAPostfija {
                 npostfija.append(num).append(' ');
                 continue;
             }
+
             // Si es operador
             if (esOperador(c)) {
                 if (c == '(') {
@@ -43,6 +46,7 @@ public class InfijaAPostfija {
                 i++;
                 continue;
             }
+            
             // Si no es operador ni número, ignorar
             i++;
         }

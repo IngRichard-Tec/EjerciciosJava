@@ -13,6 +13,7 @@ public class Stack<T> {
     private int size = 0;
 
     //Crea un nuevo objeto tipo Stack 
+    @SuppressWarnings("unchecked")
     public Stack() {
         this.data = (T[]) new Object[CAPACITY];
     }
@@ -70,18 +71,13 @@ public class Stack<T> {
     *  @return el valor del tope
     *  @throws Exception 
     */ 
-    public T peek() throws Exception{
-        T  result = null;
-        
-        //si está vacía la pila regresa una excepción
-        if (this.isEmpty()){
-            throw  new Exception("La  Pila está vacía");
+    public T peek() throws Exception {
+        if (this.isEmpty()) {
+            throw new Exception("La Pila está vacía");
         }
-        
-        result = this.data[this.size];
-        return result;
+        return this.data[this.size - 1];
     }
-
+    
     /**
     *  Muestra los elementos de la pila
     */
