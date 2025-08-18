@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import src.pila.EvaluarPostfija;
 import src.pila.InfijaAPostfija;
 import src.pila.Stack;
 
@@ -13,16 +14,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.print("Escribe la expresion infija:");
+        System.out.print("Escribe la expresion infija: ");
         String infija = sc.nextLine(); // "7 - (2*3) + 3";
-        //String infija = "7 - (2*3) + 3";
+        String postfija = "";
 
         try {
-            String postfija = InfijaAPostfija.convertir(infija);
+            postfija = InfijaAPostfija.convertirConVisualizacion(infija);
             System.out.println("Infija: " + infija);
             System.out.println("Postfija: " + postfija);
+
+            double resultado = EvaluarPostfija.evaluar(postfija);
+            System.out.println("Resultado: " + resultado);
+            
         } catch (Exception ex) {
-            System.out.println("Error en la conversión: " + ex.getMessage());
+            System.out.println("Error: " + ex.getMessage());
         }
     }
 

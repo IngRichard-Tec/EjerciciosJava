@@ -17,7 +17,7 @@ public class Stack<T> {
     public Stack() {
         this.data = (T[]) new Object[CAPACITY];
     }
-    
+
     /**      
     *  Regresa TRUE si la pila esta vacía.
     *  @return 
@@ -86,5 +86,15 @@ public class Stack<T> {
             System.out.println(data[i]);
         }
     }
+
+
+    public void mostrarElementos() {
+    System.out.print("[");
+    for (int i = 0; i < size; i++) {
+        System.out.print(data[i]);
+        if (i < size - 1) System.out.print(", ");
+    }
+    System.out.println("]");
+}
 
 }
