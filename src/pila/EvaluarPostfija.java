@@ -7,6 +7,8 @@ public class EvaluarPostfija {
         String[] tokens = postfija.split("\\s+");
 
         for (String token : tokens) {
+            System.out.println(token);
+
             if (esNumero(token)) {
                 pila.push(Double.parseDouble(token));
             } else if (esOperador(token)) {

@@ -35,7 +35,7 @@ public class Stack<T> {
     }
 
     /**
-     *  Añade un elemento al tope de la pila
+    *  Añade un elemento al tope de la pila
     *  @param value to push
     */ 
     public void push(T value){

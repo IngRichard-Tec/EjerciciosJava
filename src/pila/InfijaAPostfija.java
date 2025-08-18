@@ -23,6 +23,8 @@ public class InfijaAPostfija {
                     i++;
                 }
                 npostfija.append(num).append(' ');
+                System.out.println("1) VARIABLE (npostfija): " + npostfija);
+
                 continue;
             }
 
@@ -30,18 +32,26 @@ public class InfijaAPostfija {
             if (esOperador(c)) {
                 if (c == '(') {
                     pila.push(c);
+                    System.out.println("1) PUSH: " + c);
+
                 } else if (c == ')') {
                     while (!pila.isEmpty() && pila.peek() != '(') {
+                        System.out.println("1) POP: " + pila.peek());
                         npostfija.append(pila.pop()).append(' ');
+                        System.out.println("2) VARIABLE (npostfija): " + npostfija);
                     }
                     if (!pila.isEmpty() && pila.peek() == '(') {
                         pila.pop(); // Quita el '('
+                        System.out.println("2) POP: " + c);
                     }
                 } else {
                     while (!pila.isEmpty() && pesoEnPila(pila.peek()) >= pesoEnExpresion(c)) {
+                        System.out.println("3) POP: " + pila.peek());
                         npostfija.append(pila.pop()).append(' ');
+                        System.out.println("3) VARIABLE (npostfija): " + npostfija);
                     }
                     pila.push(c);
+                    System.out.println("2) PUSH: " + c);
                 }
                 i++;
                 continue;
@@ -55,6 +65,7 @@ public class InfijaAPostfija {
             char op = pila.pop();
             if (op != '(' && op != ')') {
                 npostfija.append(op).append(' ');
+                System.out.println("4) VARIABLE (npostfija): " + npostfija);
             }
         }
         return npostfija.toString().trim();

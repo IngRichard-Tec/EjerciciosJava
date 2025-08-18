@@ -19,13 +19,13 @@ public class Main {
         String postfija = "";
 
         try {
-            postfija = InfijaAPostfija.convertirConVisualizacion(infija);
+            postfija = InfijaAPostfija.convertir(infija);
             System.out.println("Infija: " + infija);
             System.out.println("Postfija: " + postfija);
 
             double resultado = EvaluarPostfija.evaluar(postfija);
             System.out.println("Resultado: " + resultado);
-            
+
         } catch (Exception ex) {
             System.out.println("Error: " + ex.getMessage());
         }
