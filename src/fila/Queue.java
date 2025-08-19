@@ -38,7 +38,7 @@ public class Queue<T> {
     }
     
     /**
-    *  Añade un elemento al tope de la pila
+    *  Añade un elemento al tope de la fila
     *  @param value to push
     */ 
     public void push(T value){
@@ -76,5 +76,20 @@ public class Queue<T> {
         this.size--;        
         return result;
     }
+
+        /**
+    *  Obtiene el tope de la fila sin borrarlo de la misma
+    *  @return el valor del tope
+    *  @throws Exception 
+    */ 
+    public T peek() throws Exception {
+        T result = null;
+
+        if (this.isEmpty()) {
+            throw new Exception("La Fila está vacía");
+        }
+        result = this.data[0]; 
+        return result;
+
 
 }
