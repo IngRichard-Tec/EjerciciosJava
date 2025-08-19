@@ -1,4 +1,4 @@
-package src.pila;
+package pila;
 
 public class EvaluarPostfija {
 

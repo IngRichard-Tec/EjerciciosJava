@@ -4,9 +4,9 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import src.pila.EvaluarPostfija;
-import src.pila.InfijaAPostfija;
-import src.pila.Stack;
+import pila.EvaluarPostfija;
+import pila.InfijaAPostfija;
+import pila.Stack;
 
 public class Main {
     

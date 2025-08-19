@@ -1,4 +1,4 @@
-package src.pila;
+package pila;
 
 public class Stack<T> {
 
@@ -12,7 +12,9 @@ public class Stack<T> {
     //la cantidad de elementos en la pila
     private int size = 0;
 
-    //Crea un nuevo objeto tipo Stack 
+    /*
+     * Crea un nuevo objeto tipo Stack 
+     */
     @SuppressWarnings("unchecked")
     public Stack() {
         this.data = (T[]) new Object[CAPACITY];
@@ -72,10 +74,14 @@ public class Stack<T> {
     *  @throws Exception 
     */ 
     public T peek() throws Exception {
+        T result = null;
+
         if (this.isEmpty()) {
-            throw new Exception("La Pila está vacía");
+            throw new Exception("La Fila está vacía");
         }
-        return this.data[this.size - 1];
+        result = this.data[0]; 
+        return result;
+
     }
     
     /**
@@ -86,15 +92,5 @@ public class Stack<T> {
             System.out.println(data[i]);
         }
     }
-
-
-    public void mostrarElementos() {
-    System.out.print("[");
-    for (int i = 0; i < size; i++) {
-        System.out.print(data[i]);
-        if (i < size - 1) System.out.print(", ");
-    }
-    System.out.println("]");
-}
 
 }
