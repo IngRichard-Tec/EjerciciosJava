@@ -3,36 +3,37 @@ package app;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import java.util.Random;
+import src.fila.PriorityQueue;
 import src.pila.EvaluarPostfija;
 import src.pila.InfijaAPostfija;
 import src.pila.Stack;
 
 public class Main {
-    
     public static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
+        // Llamada de ejemplo a la función de PriorityQueue
+        ejemploPriorityQueue();
+        // ...existing code...
+    }
 
-        System.out.print("Escribe la expresion infija: ");
-        String infija = sc.nextLine(); // "7 - (2*3) + 3";
-        String postfija = "";
-
-        try {
-            postfija = InfijaAPostfija.convertir(infija);
-            System.out.println("Infija: " + infija);
-            System.out.println("Postfija: " + postfija);
-
-            double resultado = EvaluarPostfija.evaluar(postfija);
-            System.out.println("Resultado: " + resultado);
-
-        } catch (Exception ex) {
-            System.out.println("Error: " + ex.getMessage());
+    public static void ejemploPriorityQueue() {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        Random rand = new Random();
+        int cantidad = 20; // Puedes cambiar la cantidad de elementos
+        System.out.println("Agregando valores aleatorios a la PriorityQueue:");
+        for (int i = 0; i < cantidad; i++) {
+            int valor = rand.nextInt(100) + 1; // 1 a 100
+            pq.push(valor, valor); // prioridad y valor iguales
+            System.out.print(valor + " ");
         }
+        System.out.println("\n\nMostrando en orden ascendente de prioridad:");
+        pq.showAscending();
     }
 
 
-    public static void EjemploStack()
+    public static void ejemploStack()
     {
         Stack<Integer> myStack = new Stack<Integer>();
         int size =0 ; // tamaño elegido por el usuario

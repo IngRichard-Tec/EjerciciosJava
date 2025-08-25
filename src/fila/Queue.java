@@ -35,10 +35,10 @@ public class Queue<T> {
 
     public void mostrar() {
         if (isEmpty()) {
-            System.out.println("Cola vacía");
+            System.out.println("Fila vacía");
             return;
         }
-        System.out.print("Cola: ");
+        System.out.print("Fila: ");
         list.mostrarLista();
     }
 }
