@@ -8,10 +8,10 @@ public class QueueArray<E> {
     // lugar para guardar los valores
     private E[] data;
 
-    // la cantidad de elementos en la cola
+    // la cantidad de elementos en la fila
     private int size = 0;
 
-    // Crea un nuevo objeto tipo Cola
+    // Crea un nuevo objeto tipo Fila
     @SuppressWarnings("unchecked")
     public QueueArray() {
         this.data = (E[]) new Object[CAPACITY];
@@ -19,7 +19,7 @@ public class QueueArray<E> {
     }
 
     /**
-     * Regresa TRUE si la cola está vacía.
+     * Regresa TRUE si la fila está vacía.
      * 
      * @return
      */
@@ -30,7 +30,7 @@ public class QueueArray<E> {
     }
 
     /**
-     * Regresa el tamaño de la cola.
+     * Regresa el tamaño de la fila.
      * 
      * @return
      */
@@ -41,29 +41,29 @@ public class QueueArray<E> {
     }
 
     /**
-     * Añade un elemento al tope de la cola
+     * Añade un elemento al tope de la fila
      * 
      * @param value to push
      */
     public void push(E value) {
-        // agrega en el tope de la cola el valor correspondiente
+        // agrega en el tope de la fila el valor correspondiente
         this.data[this.size] = value;
-        // aumenta el tamaño del cola
+        // aumenta el tamaño del fila
         this.size++;
     }
 
     /**
-     * Obtiene el primer elemento de la cola y lo borra de la misma
+     * Obtiene el primer elemento de la fila y lo borra de la misma
      * 
      * @return el primer elemento
      * @throws Exception
      */
     public E pop() throws Exception {
         E result = null;
-        // si está vacía la cola regresa una excepción
+        // si está vacía la fila regresa una excepción
 
         if (this.isEmpty()) {
-            throw new Exception("La cola está vacía");
+            throw new Exception("La fila está vacía");
         }
 
         // obtenemos el elemento de hasta delante
@@ -76,22 +76,22 @@ public class QueueArray<E> {
 
         this.data[this.size] = null; // Garbage collector
 
-        // disminuimos el tamaño de la cola
+        // disminuimos el tamaño de la fila
         this.size--;
         return result;
     }
 
     /**
-     * Obtiene primer elemento de la cola sin borrarlo de la misma
+     * Obtiene primer elemento de la fila sin borrarlo de la misma
      * @return el valor del primer elemento
      * @throws Exception
      */
 
     public E peek() throws Exception {
         E result = null;
-        // si está vacía la cola regresa una excepción
+        // si está vacía la fila regresa una excepción
         if (this.isEmpty()) {
-            throw new Exception("La Cola está vacía");
+            throw new Exception("La Fila está vacía");
         }
         result = this.data[0];
         return result;
