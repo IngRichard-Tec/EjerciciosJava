@@ -8,14 +8,20 @@ import src.fila.PriorityQueue;
 import src.pila.EvaluarPostfija;
 import src.pila.InfijaAPostfija;
 import src.pila.Stack;
+import src.tablaHash.Hashvalue;
+import src.tablaHash.Hashtable;
 
 public class Main {
     public static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        // Llamada de ejemplo a la función de PriorityQueue
-        ejemploPriorityQueue();
-        // ...existing code...
+
+        Hashvalue obj = new Hashvalue();
+        Hashtable<Hashvalue> numbers = new Hashtable<Hashvalue> ();
+        numbers.put("one", 1);
+        numbers.put("two", 2);
+        numbers.put("three",3);
+
     }
 
     public static void ejemploPriorityQueue() {
@@ -31,7 +37,6 @@ public class Main {
         System.out.println("\n\nMostrando en orden ascendente de prioridad:");
         pq.showAscending();
     }
-
 
     public static void ejemploStack()
     {
