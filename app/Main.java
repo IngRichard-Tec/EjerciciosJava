@@ -15,11 +15,29 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Hashtable<Integer> numbers = new Hashtable<Integer> ();
+        Hashtable<Integer> numbers = new Hashtable<> ();
         numbers.put("one", 1);
         numbers.put("two", 2);
         numbers.put("three",3);
 
+        ejercicioHashtable();
+        
+
+    }
+
+    public static void ejercicioHashtable() {
+        Hashtable<Integer> tabla = new Hashtable<>();
+        int[] elementos = {
+            15, 8, 42, 23, 7, 99, 56, 31, 4, 67,
+            12, 88, 53, 21, 39, 75, 60, 2, 18, 27
+        };
+
+        System.out.println("Elemento\tHashValue");
+        for (int elem : elementos) {
+            tabla.put(null, elem);
+            int hashValue = elem % Hashtable.M;
+            System.out.println(elem + "\t\t" + hashValue + "\t\t" + tabla.hashfunction(elem));
+        }
     }
 
     public static void ejemploPriorityQueue() {

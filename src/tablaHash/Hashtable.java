@@ -12,7 +12,7 @@ public class Hashtable<E> {
         * @param value Valor a encontrar su hashfunction
         * @return key
         */ 
-        private int hashfunction(E value) {
+        public int hashfunction(E value) {
                 int result=0;
                 
                 //Asumiendo que el valor se puede castear a entero
