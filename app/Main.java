@@ -8,7 +8,6 @@ import src.fila.PriorityQueue;
 import src.pila.EvaluarPostfija;
 import src.pila.InfijaAPostfija;
 import src.pila.Stack;
-import src.tablaHash.Hashvalue;
 import src.tablaHash.Hashtable;
 
 public class Main {
@@ -16,8 +15,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Hashvalue obj = new Hashvalue();
-        Hashtable<Hashvalue> numbers = new Hashtable<Hashvalue> ();
+        Hashtable<Integer> numbers = new Hashtable<Integer> ();
         numbers.put("one", 1);
         numbers.put("two", 2);
         numbers.put("three",3);
