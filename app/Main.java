@@ -4,6 +4,8 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.Random;
+
+import src.divide.TorresDeHanoi;
 import src.fila.PriorityQueue;
 import src.pila.EvaluarPostfija;
 import src.pila.InfijaAPostfija;
@@ -15,14 +17,24 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Hashtable<Integer> numbers = new Hashtable<> ();
-        numbers.put("one", 1);
-        numbers.put("two", 2);
-        numbers.put("three",3);
+        // Hashtable<Integer> numbers = new Hashtable<> ();
+        // numbers.put("one", 1);
+        // numbers.put("two", 2);
+        // numbers.put("three",3);
 
-        ejercicioHashtable();
+        // ejercicioHashtable();
         
+        ejemploTorres();
 
+    }
+
+    public static void ejemploTorres(){
+        int numDiscos = 5; // Puedes cambiar el número de discos aquí
+        TorresDeHanoi hanoi = new TorresDeHanoi(numDiscos);
+        System.out.println("Estado inicial de las torres:");
+        hanoi.mostrarTorres("");
+        hanoi.resolver();
+        System.out.println("Solución completada.");
     }
 
     public static void ejercicioHashtable() {
